@@ -14,3 +14,6 @@ RUN docker-php-ext-install \
         xml \
         pcntl \
         intl
+
+
+COPY crontab_laravel_scheduler.cron /etc/crontabs/root
