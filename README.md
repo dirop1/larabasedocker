@@ -1,13 +1,16 @@
 # larabasedocker
 
+```shell
+LAST_TAG="v0.0.2"
+```
+
 # build and push
 ```shell
-docker build . --push --tag quetzar/larabasedocker:v0.0.1
+docker buildx build . --platform linux/arm64,linux/amd64 --tag "quetzar/larabasedocker:$LAST_TAG"
 ```
 
 # push
 ```shell
-LAST_TAG="v0.0.1"
-docker push quetzar/larabasedocker:$LAST_TAG && docker tag quetzar/larabasedocker:$LAST_TAG quetzar/larabasedocker:latest && docker push quetzar/larabasedocker:latest
+docker push "quetzar/larabasedocker:$LAST_TAG" && docker tag "quetzar/larabasedocker:$LAST_TAG" quetzar/larabasedocker:latest && docker push quetzar/larabasedocker:latest
 ```
 
